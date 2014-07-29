@@ -32,17 +32,17 @@
 
 	body
 	{
-		background-image: url('../img/bosque-bg.jpg');
+		/*background-image: url('../img/bosque-bg.jpg');*/
 		background-size: cover;
 		background-position: center center;
 		background-attachment: fixed;
 		color: #fff;
 		font-family: 'Source Sans Pro', sans-serif;
+		background-color: #070055;
 	}
 
 	body,input,textarea,select
 	{
-		font-size: 1em;
 		line-height: 1.85em;
 	}
 
@@ -114,7 +114,7 @@
 	
 		a:hover
 		{
-			color: #76EF89;
+			color: #5bdcf0;
 			border-bottom-color: transparent;
 		}
 
@@ -1047,7 +1047,7 @@
 
 	.wrapper
 	{
-		background: #EAFFED;
+		background: #B9C1E5;
 		margin: 0 2em;
 		padding: 1em 0 1em 0;
 		color: black;
@@ -1218,7 +1218,7 @@
 			{
 				content: '';
 				display: block;
-				width: 300%;
+				width: 500%;
 				position: absolute;
 				top: 50%;
 				margin-top: -3px;
@@ -1417,8 +1417,13 @@
 		overflow: hidden;
 		padding: 0.5em 0 0em 0;
 		color: #fff;
+		text-align: center;
+		font-size: 0.7em;
 	}
 
+		#footer span{
+			margin: 0 1em 0 1em;
+		}
 		#footer .fa.circled
 		{
 			background: #fff;
@@ -1657,8 +1662,8 @@
             margin: 5px 0;
             color: #483949;
         }
-        .form input[type='text'], .form textarea{
-            padding: 7px 6px;
+        .form input[type='text'],.form input[type='password'], .form textarea{
+            padding: 0 6px;
             width: 100%;
             border: 1px solid #CED5D7;
             resize: none;
@@ -1671,16 +1676,16 @@
         }
         .form input[type='button']{
             border: 1px solid #CED5D7;
-            box-shadow:0 0 0 3px #EEF5F7;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: bold;
-            text-shadow: 1px 1px 0px white;
-            display: block;
-            margin: 10px auto;
-            background: #69e392;
-			background: -moz-linear-gradient(top, #e4f1f6 0%, #cfe6ef 100%);
-			background: -webkit-linear-gradient(top, #e4f1f6 0%,#69e392 100%);
+			box-shadow: 0 0 0 2px #EEF5F7;
+			padding: 0 16px;
+			border-radius: 8px;
+			font-weight: bold;
+			text-shadow: 1px 1px 0px white;
+			display: block;
+			margin: 10px auto;
+			background: #90BCEB;
+			background: -moz-linear-gradient(top, #e4f1f6 0%, #90BCEB 100%);
+			background: -webkit-linear-gradient(top, #e4f1f6 0%,#90BCEB 100%);
 			cursor: pointer;
         }
         .form input[type='button']:hover{
@@ -1809,10 +1814,12 @@
 
 .biglogo {
 	
-	content: url('../img/vivero-white.png');
+	content: url('../img/Hosclivet-logo.svg');
+	padding: 0;
+	margin-left: 1em;
 }
 
-.lemaRow{
+.title{
 	margin-top: 20px;
 	margin-left: 5px;
 }
@@ -1822,6 +1829,11 @@
 	font-size: 3em;
 	text-align: center;
 	margin-top: 40px;
+}
+
+.login{
+	font-size: 0.8em;
+	text-align:center;	
 }
 
 /*********************************************************************************/

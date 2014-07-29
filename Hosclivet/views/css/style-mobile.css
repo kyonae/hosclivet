@@ -8,9 +8,7 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 
-	body{
-		background: url('../img/mobile-back.png');
-	}
+	
 	body,input,textarea,select
 	{
 		font-size: 12.5pt;
@@ -129,18 +127,6 @@
 			border-radius: 0 0 0.35em 0.35em;
 		}
 		
-			#navButton .toggle:before
-			{
-				content: '';
-				display: block;
-				width: 80px;
-				height: 30px;
-				position: absolute;
-				left: 55%;
-				margin-left: -40px;
-				top:3px;
-				background: url('../img/vivero-small.png') no-repeat;				
-			}
 			#navButton .toggle:after
 			{
 				content: '';
@@ -148,7 +134,7 @@
 				width: 80px;
 				height: 30px;
 				position: absolute;
-				left: 65%;
+				left: 50%;
 				top:2px;
 				margin-left: -40px;
 				background: url('images/toggle.svg') center no-repeat;				
@@ -157,7 +143,7 @@
 	#navPanel
 	{
 		position: relative;
-		background: #0f5c10;
+		background: #00008B;
 		box-shadow: inset 0px -2px 5px 0px rgba(0,0,0,0.25);
 		font-size: 1em;
 	}
@@ -205,17 +191,18 @@
 			#navPanel .indent-3 { display: inline-block; width: 3em; }
 			#navPanel .indent-4 { display: inline-block; width: 4em; }
 			#navPanel .indent-5 { display: inline-block; width: 5em; }
-			#navPanel .depth-0 { color: #fff;
-				border-top: 1px solid #16490b;
+			#navPanel .depth-0 { 
+				background: #13148A;				
+				border-top: 1px solid #07075F;
 			 }
 			
 			#navPanel .depth-1 {
-				background: #126b18;				
-				border-top: 1px solid #0f5c10;
+				background: #1314C9;				
+				border-top: 1px solid #13148A;
 			}
 			#navPanel .depth-2 {
-				background: #117c13;				
-				border-top: 1px solid #126b18;
+				background: #1500d1;				
+				border-top: 1px solid #1314C9;
 			}			
 			
 
@@ -226,7 +213,6 @@
 	.wrapper
 	{
 		padding: 1em;
-		background-color: #EAFFED;
 		color: black;
 		font-size: 0.7em;
 		margin: 3em 0.5em 0 0.5em
@@ -361,7 +347,7 @@
 /* Logo                                                                          */
 /*********************************************************************************/
 
-.lemaRow {
+.title {
 	display:none;	
 	
 }

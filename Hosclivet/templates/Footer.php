@@ -1,10 +1,11 @@
 	
 </div>
 	<!-- Footer -->
-	<div id="footer">
-		<div class="copyright">
-			Desarrollado por <a href="http://lechtechsolutions.com/">LechTech Solutions SL</a>
-		</div>
+	<div id='footer'>
+		<span><a href='/Hosclivet/Index/construction'>Servicios</a></span>
+		<span><a href='/Hosclivet/Index/construction'>Personal</a></span>
+		<span><a href='/Hosclivet/Index/construction'>Vacunas</a></span>
+		<span><a href='/Hosclivet/Index/construction'>Imágenes</a></span>
 	</div>
 </body>
 </html>

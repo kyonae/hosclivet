@@ -36,7 +36,7 @@
 
 		// skelJS (probably don't need to change anything here unless you know what you're doing)
 			skelJS: {
-				prefix: '/Vivero/views/css/style',
+				prefix: '/Hosclivet/views/css/style',
 				resetCSS: true,
 				boxModel: 'border',
 				grid: {
@@ -45,7 +45,7 @@
 				breakpoints: {
 					'normal':	{ range: '-1680', containers: 'fluid', grid: { gutters: 20 }, viewportWidth: 1140 },
 					'narrow':	{ range: '-960', containers: 'fluid', grid: { gutters: 16 } },
-					'mobile':	{ range: '-750', containers: 'fluid', grid: { gutters: 6, collapse: true }, lockViewport: true }
+					'mobile':	{ range: '-560', containers: 'fluid', grid: { gutters: 6, collapse: true }, lockViewport: true }
 				}
 			},
 
@@ -65,7 +65,7 @@
 						navButton: {
 							breakpoints: 'mobile',
 							position: 'top-center',
-							width: 100,
+							width: 80,
 							height: 50,
 							html: '<div class="toggle" data-action="togglePanel" data-args="navPanel"></div>'
 						}
