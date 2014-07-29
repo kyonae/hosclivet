@@ -27,8 +27,8 @@
 <div class="container">
 
 	<div class='row title'>
-		<div class='4u biglogo'></div>
-		<div class='-3u 4u'>
+		<div class='6u biglogo'></div>
+		<div class='-1u 4u'>
 			<form class='login form' method='post' action=''>
 				<div class='row'>
 					<div class='6u' style='text-align: right;'>Usuario:</div>
