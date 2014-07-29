@@ -1243,7 +1243,7 @@
 			#nav > ul > li
 			{
 				display: inline-block;
-				margin: -5px 0.5em 0 0.5em;
+				margin: -5px 0.1em 0 0.1em;
 				border-radius: 0.5em;
 				padding: 0.85em;
 				border: solid 1px transparent;
