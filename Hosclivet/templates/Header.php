@@ -28,14 +28,14 @@
 
 	<div class='row title'>
 		<div class='4u biglogo'></div>
-		<div class='-4u 3u'>
+		<div class='-3u 4u'>
 			<form class='login form' method='post' action=''>
 				<div class='row'>
-					<div class='6u'>Usuario:</div>
+					<div class='6u' style='text-align: right;'>Usuario:</div>
 					<div class='6u'><input type='text' placeholder='usuario'/></div>
 				</div>
 				<div class='row'>
-					<div class='6u'>Contraseña:</div>
+					<div class='6u' style='text-align: right;'>Contraseña:</div>
 					<div class='6u'><input type='password' placeholder='contraseña'/></div>
 				</div>
 				<input type='button' value='Login'/>

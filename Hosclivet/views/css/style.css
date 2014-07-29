@@ -1301,7 +1301,7 @@
 
 			.dropotron li:hover
 			{
-				color: #49b439;
+				color: #3d9dff;
 			}
 
 			.dropotron li a,
@@ -1667,12 +1667,11 @@
             width: 100%;
             border: 1px solid #CED5D7;
             resize: none;
-            box-shadow:0 0 0 3px #EEF5F7;
-            margin: 5px 0;
+            box-shadow:0 0 0 2px #EEF5F7;
         }
-        .form input[type='text']:focus, .form textarea:focus{
+        .form input[type='text']:focus,,.form input[type='password']:focus .form textarea:focus{
             outline: none;
-            box-shadow:0 0 0 3px #dde9ec;
+            box-shadow:0 0 0 2px #dde9ec;
         }
         .form input[type='button']{
             border: 1px solid #CED5D7;
