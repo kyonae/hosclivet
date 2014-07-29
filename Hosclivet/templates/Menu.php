@@ -52,10 +52,15 @@
 			</ul>
 		</li>
 		<li>
-			<a href="/Hosclivet/Index/construction">Personal</a>
-		</li>
-		<li>
-			<a href="/Hosclivet/Index/construction">Quienes somos</a>	
+			<a href="/Hosclivet/Index/construction">Quienes somos</a>
+			<ul>
+				<li>
+					<a href="/Hosclivet/Index/construction">Personal</a>
+				</li>
+				<li>
+					<a href="/Hosclivet/Index/construction">Localización y horario</a>
+				</li>
+			</ul>	
 		</li>						
 	</ul>
 </nav>

@@ -8,7 +8,9 @@
 	require($config->get('templatesFolder') . "Menu.php");
 ?>
 	<div class='wrapper'>
-		<H1>Bienvenido al ERP de Viveros Peñitas. Pulse en alguna opción del menú para continuar.</H1>
+		<p class="message">
+			Bienvenido a la página web del Hospital Clínico Veterinario.
+		</p>
 	</div>
 <?php
 	require($config->get('templatesFolder') . "Footer.php");
