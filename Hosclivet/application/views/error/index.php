@@ -1,5 +1,5 @@
 <div class="content">
     <h1 style="color: red;">
-        This page does not exist.
+        <?php echo $texts['page.not.found']; ?>
     </h1>
 </div>

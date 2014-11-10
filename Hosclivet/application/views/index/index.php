@@ -1,5 +1,5 @@
 <div class="content">
-    <h1>Index</h1>
+    <h1><?php echo $texts['index'];?></h1>
 
     <!-- echo out the system feedback (error and success messages) -->
     <?php $this->renderFeedbackMessages(); ?>

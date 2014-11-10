@@ -16,6 +16,7 @@ class View
      */
     public function render($filename, $render_without_header_and_footer = false)
     {
+    	require TEXTS;
         // page without header and footer, for whatever reason
         if ($render_without_header_and_footer == true) {
             require VIEWS_PATH . $filename . '.php';
@@ -49,7 +50,7 @@ class View
      */
     private function checkForActiveController($filename, $navigation_controller)
     {
-        $split_filename = explode("/", $filename);
+        $split_filename = explode(DS, $filename);
         $active_controller = $split_filename[0];
 
         if ($active_controller == $navigation_controller) {
@@ -68,7 +69,7 @@ class View
      */
     private function checkForActiveAction($filename, $navigation_action)
     {
-        $split_filename = explode("/", $filename);
+        $split_filename = explode(DS, $filename);
         $active_action = $split_filename[1];
 
         if ($active_action == $navigation_action) {
@@ -87,11 +88,11 @@ class View
      */
     private function checkForActiveControllerAndAction($filename, $navigation_controller_and_action)
     {
-        $split_filename = explode("/", $filename);
+        $split_filename = explode(DS, $filename);
         $active_controller = $split_filename[0];
         $active_action = $split_filename[1];
 
-        $split_filename = explode("/", $navigation_controller_and_action);
+        $split_filename = explode(DS, $navigation_controller_and_action);
         $navigation_controller = $split_filename[0];
         $navigation_action = $split_filename[1];
 

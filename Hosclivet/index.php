@@ -11,7 +11,6 @@ if (!defined('ROOT')){
 	define('APP_DIR', ROOT . DS . 'application');
 	define('CONFIG_DIR', APP_DIR . DS . 'config');
 	define('VENDOR_DIR', ROOT . DS . 'vendor');
-	
 }
 
 require_once CONFIG_DIR . DS . 'common_config.php';
