@@ -36,7 +36,7 @@
             <li <?php if ($this->checkForActiveController($filename, "overview")) { echo ' class="active" '; } ?> >
                 <a href="<?php echo URL; ?>overview"><?php echo $texts['overview']; ?></a>
             </li>
-            <?php if (Session::get('user_logged_in') == false):?>
+            <?php if (Session::get('user_logged_in') == true):?>
 	            <li <?php if ($this->checkForActiveController($filename, "dashboard")) { echo ' class="active" '; } ?> >
 	                <a href="<?php echo URL; ?>dashboard"><?php echo $texts['dashboard']; ?></a>
 	            </li>
