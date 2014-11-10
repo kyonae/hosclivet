@@ -2,10 +2,10 @@
 if (!defined('LANG')){
 	
 	/**
-	 * Lenguaje de la aplicación
+	 * Lenguaje de la aplicación. Por defecto está en inglés
 	 * @var unknown
 	 */
-	define('LANG','ES');
+	// define('LANG','EN');
 	
 	/**
 	 * Nombre de la aplicacion
