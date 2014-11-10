@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?php echo APP_LONG_NAME; ?></title>
+    <title><?php echo APP_NAME; ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS -->
@@ -20,7 +20,7 @@
     </div>
 
     <div class='title-box'>
-        <a href="<?php echo URL; ?>"><?php echo APP_LONG_NAME; ?></a>
+        <a href="<?php echo URL; ?>"><?php echo APP_NAME; ?></a>
     </div>
 
     <div class="header">

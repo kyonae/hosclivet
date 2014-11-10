@@ -1,0 +1,7 @@
+Para conseguir que todo funcione correctamente debes ir al .htaccess de la raíz del proyecto y modificar la línea 10 del rewritebase según
+corresponda.
+
+Luego ir al fichero de specific_config en application/config/specific_config.php para configurar datos como el nombre de la aplicación, 
+el lenguaje en el que va a estar la aplicación y la conexión de base de datos
+
+Los ficheros de internacionalizacdi
