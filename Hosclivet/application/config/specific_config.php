@@ -3,19 +3,16 @@ if (!defined('LANG')){
 	
 	/**
 	 * Lenguaje de la aplicación. Por defecto está en inglés
-	 * @var unknown
 	 */
-	// define('LANG','EN');
+	define('LANG','ES');
 	
 	/**
 	 * Nombre de la aplicacion
-	 * @var unknown
 	 */
 	define('APP_NAME', 'My Application');
 	
 	/**
 	 * Conexion de base de datos
-	 * @var unknown
 	 */
 	define('DB_TYPE', 'mysql');
 	define('DB_HOST', '127.0.0.1');

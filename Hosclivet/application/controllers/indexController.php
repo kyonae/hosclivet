@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Class Index
- * The index controller
+ * Clase IndexController
+ * El controlador por defecto
  */
 class IndexController extends Controller
 {
     /**
-     * Construct this object by extending the basic Controller class
+     * Construimos este objeto heredando de la clase padre Controller.
      */
     function __construct()
     {
@@ -15,8 +15,9 @@ class IndexController extends Controller
     }
 
     /**
-     * Handles what happens when user moves to URL/index/index, which is the same like URL/index or in this
-     * case even URL (without any controller/action) as this is the default controller-action when user gives no input.
+     * Maneja lo que ocurre cuando un usuario navega a la URL/index/index, que es lo mismo que URL/index o 
+     * incluso URL (sin controlador ni método) puesto que son el controlador y el método por defecto cuando el usuario
+     * no introduce nada.
      */
     function index()
     {

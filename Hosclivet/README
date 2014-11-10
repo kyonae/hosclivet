@@ -2,6 +2,8 @@ Para conseguir que todo funcione correctamente debes ir al .htaccess de la raíz
 corresponda.
 
 Luego ir al fichero de specific_config en application/config/specific_config.php para configurar datos como el nombre de la aplicación, 
-el lenguaje en el que va a estar la aplicación y la conexión de base de datos
+el lenguaje en el que va a estar la aplicación y la conexión de base de datos.
 
-Los ficheros de internacionalizacdi
+Los ficheros de internacionalizacion se encuentran en la carpeta application/config/i18n en ficheros de la forma texts_(IDIOMA).php en 
+forma de arrays asociativos cuyas claves deben ser identicas en cada fichero de lenguaje y cuyas traducciones se encuentran como el valor 
+almacenado en cada clave.

@@ -6,19 +6,20 @@
     <title><?php echo APP_NAME; ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSS -->
+    
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/reset.css" />
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/style.css" />
-    <!-- in case you wonder: That's the cool-kids-protocol-free way to load jQuery -->
+    
     <script type="text/javascript" src="<?php echo URL; ?>public/js/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="<?php echo URL; ?>public/js/application.js"></script>
 </head>
 <body>
 
+	<!-- BLOQUE CON LA INFORMACIÓN SOBRE EL DEBUG -->
     <div class="debug-helper-box">
-        DEBUG HELPER: you are in the view: <?php echo $filename; ?>
+        DEBUG HELPER: <?php echo str_replace('%viewName%', $filename, $texts['view.location']); ?>
     </div>
-
+    
     <div class='title-box'>
         <a href="<?php echo URL; ?>"><?php echo APP_NAME; ?></a>
     </div>
@@ -35,18 +36,13 @@
             <li <?php if ($this->checkForActiveController($filename, "overview")) { echo ' class="active" '; } ?> >
                 <a href="<?php echo URL; ?>overview"><?php echo $texts['overview']; ?></a>
             </li>
-            <?php if (Session::get('user_logged_in') == true):?>
-            <li <?php if ($this->checkForActiveController($filename, "dashboard")) { echo ' class="active" '; } ?> >
-                <a href="<?php echo URL; ?>dashboard"><?php echo $texts['dashboard']; ?></a>
-            </li>
-            <?php endif; ?>
-            <?php if (Session::get('user_logged_in') == true):?>
-            <li <?php if ($this->checkForActiveController($filename, "note")) { echo ' class="active" '; } ?> >
-                <a href="<?php echo URL; ?>note"><?php echo $texts['my.notes']; ?></a>
-            </li>
-            <?php endif; ?>
-
-            <?php if (Session::get('user_logged_in') == true):?>
+            <?php if (Session::get('user_logged_in') == false):?>
+	            <li <?php if ($this->checkForActiveController($filename, "dashboard")) { echo ' class="active" '; } ?> >
+	                <a href="<?php echo URL; ?>dashboard"><?php echo $texts['dashboard']; ?></a>
+	            </li>
+	            <li <?php if ($this->checkForActiveController($filename, "note")) { echo ' class="active" '; } ?> >
+	                <a href="<?php echo URL; ?>note"><?php echo $texts['my.notes']; ?></a>
+	            </li>
                 <li <?php if ($this->checkForActiveController($filename, "login")) { echo ' class="active" '; } ?> >
                     <a href="<?php echo URL; ?>login/showprofile"><?php echo $texts['my.account']; ?></a>
                     <ul class="sub-menu">
@@ -70,9 +66,6 @@
             <?php if (Session::get('user_logged_in') == false):?>
                 <li <?php if ($this->checkForActiveControllerAndAction($filename, "login/index")) { echo ' class="active" '; } ?> >
                     <a href="<?php echo URL; ?>login/index"><?php echo $texts['login']; ?></a>
-                </li>
-                <li <?php if ($this->checkForActiveControllerAndAction($filename, "login/register")) { echo ' class="active" '; } ?> >
-                    <a href="<?php echo URL; ?>login/register"><?php echo $texts['register']; ?></a>
                 </li>
             <?php endif; ?>
         </ul>

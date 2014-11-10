@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Class Error
- * This controller simply shows a page that will be displayed when a controller/method is not found.
- * Simple 404 handling.
+ * Clase ErrorController
+ * Este controlador simplemente muestra una página cuando no se encuentra un controlador o método.
+ * Manejo simple del error 404.
  */
 class ErrorController extends Controller
 {
     /**
-     * Construct this object by extending the basic Controller class
+     * Construimos este objeto heredando de la clase Controller.
      */
     function __construct()
     {
@@ -16,7 +16,7 @@ class ErrorController extends Controller
     }
 
     /**
-     * This method controls what happens / what the user sees when an error happens (404)
+     * Este método controla lo que pasa y lo que el usuario ve cuando ocurre un error (404).
      */
     function index()
     {

@@ -1,12 +1,11 @@
 <?php
 
 /**
- * This is the "base controller class". All other "real" controllers extend this class.
- * Whenever a controller is created, we also
- * 1. initialize a session
- * 2. check if the user is not logged in anymore (session timeout) but has a cookie
- * 3. create a database connection (that will be passed to all models that need a database connection)
- * 4. create a view object
+ * Esta es la clase base de cada Controlador. Los demás controladores heredan de esta clase.
+ * Cuando creamos un controlador también ejecutamos lo siguiente:
+ * 1. Inicializamos una sesión
+ * 2. Comprobamos si el usuario no está logeado
+ * 3. Creamos una vista
  */
 abstract class Controller
 {
@@ -14,30 +13,25 @@ abstract class Controller
     {
         Session::init();
 
-        // user has remember-me-cookie ? then try to login with cookie ("remember me" feature)
-        if (!isset($_SESSION['user_logged_in']) && isset($_COOKIE['rememberme'])) {
-            header('location: ' . URL . 'login/loginWithCookie');
-        }
-
-        // create a view object (that does nothing, but provides the view render() method)
+        // Creamos una vista (que no hace nada pero nos permite utilizar su método render() ).
         $this->view = new View();
     }
 
     /**
-     * loads the model with the given name.
-     * @param $name string name of the model
+     * Carga el modelo con el nombre deseado
+     * @param $name Cadena con el nombre del modelo
      */
     public function loadModel($name)
     {
-        $path = MODELS_PATH . strtolower($name) . '_model.php';
+        $path = MODELS_PATH . strtolower($name) . 'Model.php';
 
         if (file_exists($path)) {
-            require MODELS_PATH . strtolower($name) . '_model.php';
-            // The "Model" has a capital letter as this is the second part of the model class name,
-            // all models have names like "LoginModel"
+            require MODELS_PATH . strtolower($name) . 'Model.php';
+            // Todos los modelos deben tener el nombre del controlador seguido por Model con M mayúscula,
+            // como por ejemplo "LoginModel".
             $modelName = $name . 'Model';
-            // return the new model object while passing the database connection to the model
-            return new $modelName($this->db);
+            // Devuelve el modelo.
+            return new $modelName();
         }
     }
 }

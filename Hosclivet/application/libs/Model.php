@@ -1,8 +1,8 @@
 <?php
 
 /**
- * This is the "base model class". All other "real" models extend this class.
- * Whenever a model is created, we create a database connection
+ * Esta es la clase Modelo de la que heredarán todos los modelos.
+ * Cuando creamos un modelo también creamos una conexión con la base de datos.
  */
 abstract class Model{
 	protected $db;
@@ -13,7 +13,8 @@ abstract class Model{
 			$this->db = Database::singleton();
 		}
 		catch (PDOException $e) {
-			die('Database connection could not be established.');
+			require_once TEXTS;
+			die($texts['db.connection.not.established']);
 		}
 	}
 }

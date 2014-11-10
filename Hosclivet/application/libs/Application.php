@@ -1,27 +1,27 @@
 <?php
 
 /**
- * Class Application
- * The heart of the app
+ * Clase Aplicación
+ * Es el corazón de nuestra aplicación web
  */
 class Application
 {
-    /** @var null The controller part of the URL */
+    /** @var null El controlador parte de la URL */
     private $url_controller;
-    /** @var null The method part (of the above controller) of the URL */
+    /** @var null El método del controlador parte de la URL */
     private $url_action;
-    /** @var null Parameter one of the URL */
+    /** @var null Primer parámetro de la URL */
     private $url_parameter_1;
-    /** @var null Parameter two of the URL */
+    /** @var null Segundo parámetro de la URL */
     private $url_parameter_2;
+    /** @var null Tercer parámetro de la URL */
     /** @var null Parameter three of the URL */
     private $url_parameter_3;
 
     /**
-     * Starts the Application
-     * Takes the parts of the URL and loads the according controller & method and passes the parameter arguments to it
-     * TODO: get rid of deep if/else nesting
-     * TODO: make the hardcoded locations ("error/index", "index.php", new Index()) dynamic, maybe via config.php
+     * Inicia la Aplicación
+     * Coge las partes de la URL y saca el controlador, el método y sus parámetros correspondientes.
+     * TODO: Modificar los ifs anidados
      */
     public function __construct()
     {
@@ -29,15 +29,17 @@ class Application
 
             // Comprueba que el controlador exista
             if (file_exists(CONTROLLERS_PATH . $this->url_controller . '.php')) {
-                // if so, then load this file and create this controller
-                // example: if controller would be "car", then this line would translate into: $this->car = new car();
+            	
+                // Si existe entonces carga el fichero y crea el controlador
+                // Ejemplo: Si controlador fuese "coche", entonces esta linea se traduciría como $this->coche = new coche();
                 require_once CONTROLLERS_PATH . $this->url_controller . '.php';
                 $this->url_controller = new $this->url_controller();
 
-                // check for method: does such a method exist in the controller ?
+                // Comprueba que el metodo exista dentro del controlador
                     if (method_exists($this->url_controller, $this->url_action)) {
 
-                        // call the method and pass the arguments to it
+                        // Puesto que si existe parametro 3 existen los anteriores, simplemente ejecutamos el metodo con todos los parametros.
+                        // y hacemos la comprobación para los demás parámetros en orden descendente.
                         if (isset($this->url_parameter_3)) {
                             $this->url_controller->{$this->url_action}($this->url_parameter_1, $this->url_parameter_2, $this->url_parameter_3);
                         } elseif (isset($this->url_parameter_2)) {
@@ -45,41 +47,37 @@ class Application
                         } elseif (isset($this->url_parameter_1)) {
                             $this->url_controller->{$this->url_action}($this->url_parameter_1);
                         } else {
-                            // if no parameters given, just call the method without arguments
+                            // Si no había parámetros entonces simplemente ejecutamos el método
                             $this->url_controller->{$this->url_action}();
                         }
                     } else {
-                        // redirect user to error page (there's a controller for that)
+                        // Si no existe el método redirigimos a la página de error
                         header('location: ' . URL . DEFAULT_ERROR_CONTROLLER);
                     }
-            // obviously mistyped controller name, therefore show 404
             } else {
-                // redirect user to error page (there's a controller for that)
+                // Si no existe el controlador redirigimos a la página de error para la cual existe un controlador específico
 				header('location: ' . URL . DEFAULT_ERROR_CONTROLLER);
             }
-        // if url_controller is empty, simply show the main page (index/index)
         
     }
 
     /**
-     * Gets and splits the URL
+     * Coge y divide la URL
      */
     private function splitUrl()
     {
         if (isset($_GET['url'])) {
-            // split URL
-            $url = rtrim($_GET['url'], '/');
+            // dividimos la URL
+            $url = rtrim($_GET['url'], DS);
             $url = filter_var($url, FILTER_SANITIZE_URL);
-            $url = explode('/', $url);
+            $url = explode(DS, $url);
             
         }
         else{
-        	// we create an $url variable if it not exists with index as default controller
+        	// Creamos una URL con el controlador por defecto
         	$url = array(DEFAULT_CONTROLLER);
         }
-        // Put URL parts into according properties
-        // By the way, the syntax here if just a short form of if/else, called "Ternary Operators"
-        // http://davidwalsh.name/php-shorthand-if-else-ternary-operators
+        // Configuramos las partes de la URL como corresponda
         $this->url_controller = $url[0].'Controller';
         $this->url_action = (isset($url[1]) ? $url[1] : DEFAULT_ACTION);
         $this->url_parameter_1 = (isset($url[2]) ? $url[2] : null);

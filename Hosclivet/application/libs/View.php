@@ -1,23 +1,23 @@
 <?php
 
 /**
- * Class View
- *
- * Provides the methods all views will have
+ * Clase Vista
+ * 
+ * Nos provee de todos los métodos que tendrán las vistas.
  */
 class View
 {
     /**
-     * simply includes (=shows) the view. this is done from the controller. In the controller, you usually say
-     * $this->view->render('help/index'); to show (in this example) the view index.php in the folder help.
-     * Usually the Class and the method are the same like the view, but sometimes you need to show different views.
-     * @param string $filename Path of the to-be-rendered view, usually folder/file(.php)
-     * @param boolean $render_without_header_and_footer Optional: Set this to true if you don't want to include header and footer
+     * Simplemente incluye (o muestra) la vista. Esto se hace desde el controlador. DENTRO DEL CONTROLADOR normalmente se invoca al
+     * método mediante $this->view->render('help/index'); para mostrar (en este ejemplo) la vista index.php en la carpeta help.
+     * Normalmente la clase y el método son iguales que la vista pero a veces necesitamos mostrar diferentes vistas.
+     * @param string $filename Path a la vista que debe ser visualizada, generalmente carpeta/archivo(.php).
+     * @param boolean $render_without_header_and_footer Opcional: Configura esto a true si no quieres incluir ni cabecera ni pie
      */
     public function render($filename, $render_without_header_and_footer = false)
     {
     	require TEXTS;
-        // page without header and footer, for whatever reason
+        // Página sin cabecera ni pie por cualquier motivo elegido por el desarrollador
         if ($render_without_header_and_footer == true) {
             require VIEWS_PATH . $filename . '.php';
         } else {
@@ -28,25 +28,25 @@ class View
     }
 
     /**
-     * renders the feedback messages into the view
+     * Visualiza los mensajes de feedback en la vista
      */
     public function renderFeedbackMessages()
     {
-        // echo out the feedback messages (errors and success messages etc.),
-        // they are in $_SESSION["feedback_positive"] and $_SESSION["feedback_negative"]
+    	// Muestra los mensajes de feedback (mensajes de error y éxito, etc) almacenados en $_SESSION['feedback_positive']
+    	// y $_SESSION['feedback_negative']
         require VIEWS_PATH . 'templates/feedback.php';
 
-        // delete these messages (as they are not needed anymore and we want to avoid to show them twice
+        // Borramos los mensajes puesto que no los vamos a necesitar más y no queremos mostrarlos más de una vez
         Session::set('feedback_positive', null);
         Session::set('feedback_negative', null);
     }
 
     /**
-     * Checks if the passed string is the currently active controller.
-     * Useful for handling the navigation's active/non-active link.
+     * Comprueba si la cadena pasada es el controlador activo actualmente.
+     * Utilizado para manejar los enlaces de navegacion activos/no activos.
      * @param string $filename
      * @param string $navigation_controller
-     * @return bool Shows if the controller is used or not
+     * @return bool Booleano que nos dice si el enlace corresponde al controlador activo
      */
     private function checkForActiveController($filename, $navigation_controller)
     {
@@ -56,16 +56,16 @@ class View
         if ($active_controller == $navigation_controller) {
             return true;
         }
-        // default return
+        
         return false;
     }
 
     /**
-     * Checks if the passed string is the currently active controller-action (=method).
-     * Useful for handling the navigation's active/non-active link.
+     * Comprueba si la cadena pasada es el método actualmente activo.
+     * Utilizado para manejar los enlaces de navegacion activos/no activos.
      * @param string $filename
      * @param string $navigation_action
-     * @return bool Shows if the action/method is used or not
+     * @return bool Muestra si el método es el que está siendo utilizado
      */
     private function checkForActiveAction($filename, $navigation_action)
     {
@@ -75,13 +75,13 @@ class View
         if ($active_action == $navigation_action) {
             return true;
         }
-        // default return of not true
+        
         return false;
     }
 
     /**
-     * Checks if the passed string is the currently active controller and controller-action.
-     * Useful for handling the navigation's active/non-active link.
+     * Comprueba si la cadena pasada es el controlador y su acción actualmente activas.
+     * Utilizado para manejar los enlaces de navegacion activos/no activos.
      * @param string $filename
      * @param string $navigation_controller_and_action
      * @return bool
@@ -99,7 +99,7 @@ class View
         if ($active_controller == $navigation_controller AND $active_action == $navigation_action) {
             return true;
         }
-        // default return of not true
+        
         return false;
     }
 }
