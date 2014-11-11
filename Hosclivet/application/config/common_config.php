@@ -47,4 +47,13 @@ if (!defined('DEFAULT_CONTROLLER')){
 	 */
 	define('VIEWS_PATH', VIEWS_DIR . DS);
 	
+	/**
+	 * Directorio de las plantillas sin separador
+	 */
+	define('TEMPLATES_DIR', VIEWS_PATH . 'templates');
+	
+	/**
+	 * Path de las plantillas con separador
+	 */
+	define('TEMPLATES_PATH', TEMPLATES_DIR . DS);
 }

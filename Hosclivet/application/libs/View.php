@@ -21,9 +21,9 @@ class View
         if ($render_without_header_and_footer == true) {
             require VIEWS_PATH . $filename . '.php';
         } else {
-            require VIEWS_PATH . 'templates/header.php';
+            require TEMPLATES_PATH . 'header.php';
             require VIEWS_PATH . $filename . '.php';
-            require VIEWS_PATH . 'templates/footer.php';
+            require TEMPLATES_PATH . 'footer.php';
         }
     }
 
@@ -34,7 +34,7 @@ class View
     {
     	// Muestra los mensajes de feedback (mensajes de error y éxito, etc) almacenados en $_SESSION['feedback_positive']
     	// y $_SESSION['feedback_negative']
-        require VIEWS_PATH . 'templates/feedback.php';
+        require TEMPLATES_PATH . 'feedback.php';
 
         // Borramos los mensajes puesto que no los vamos a necesitar más y no queremos mostrarlos más de una vez
         Session::set('feedback_positive', null);

@@ -3,7 +3,6 @@
 if (!defined('ROOT')){	
 	/**
 	 * Configuracion generica
-	 * @var unknown
 	 */
 	define('ROOT', dirname(__FILE__));
 	define('DS', DIRECTORY_SEPARATOR);
