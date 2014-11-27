@@ -1,7 +1,7 @@
 <?php
 
 function autoload($class) {
-	// Si el fichero no existe el directorio LIBS_PATH (configurable en config/common_config.php)
+	// Si el fichero no existe  en el directorio LIBS_PATH (configurable en config/common_config.php)
 	if (file_exists(LIBS_PATH . $class . ".php")) {
 		require LIBS_PATH . $class . ".php";
 	} else {

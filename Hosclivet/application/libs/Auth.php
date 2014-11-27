@@ -7,19 +7,19 @@
  */
 class Auth
 {
-    public static function handleLogin()
-    {
-        // initialize the session
-        Session::init();
+	public static function handleLogin()
+	{
+		// initialize the session
+		Session::init();
 
-        // if user is still not logged in, then destroy session, handle user as "not logged in" and
-        // redirect user to login page
-        if (!isset($_SESSION['user_logged_in'])) {
-            Session::destroy();
-            header('location: ' . URL . 'login');
-            // to prevent fetching views via cURL (which "ignores" the header-redirect above) we leave the application
-            // the hard way, via exit(). @see https://github.com/panique/php-login/issues/453
-            exit();
-        }
-    }
+		// if user is still not logged in, then destroy session, handle user as "not logged in" and
+		// redirect user to login page
+		if (!isset($_SESSION['user_logged_in'])) {
+			Session::destroy();
+			header('location: ' . URL . 'login');
+			// to prevent fetching views via cURL (which "ignores" the header-redirect above) we leave the application
+			// the hard way, via exit(). @see https://github.com/panique/php-login/issues/453
+			exit();
+		}
+	}
 }

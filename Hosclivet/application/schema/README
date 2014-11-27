@@ -1,0 +1,4 @@
+	Los usuarios tienen nombre y contraseña, así como un determinado permiso que les permite acceder a unas zonas u otras de la aplicación.
+	En la página se pueden crear anuncios y cada anuncio debe tener un texto, una fecha y puede contener una o más imágenes relacionadas al anuncio así como unos datos de contacto en caso de ser necesarios. Para que un anuncio sea visible a todo el mundo debe ser validado antes por un usuario con permiso de administrador.
+	Se pueden crear noticias por los usuarios con permiso de administrador o asociado y estas serán visibles a todo el mundo. Las noticias tendrán texto y usuario asociado creador de la noticia así como una fecha y hora de creación.
+	

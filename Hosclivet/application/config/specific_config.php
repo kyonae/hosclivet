@@ -4,7 +4,7 @@ if (!defined('LANG')){
 	/**
 	 * Lenguaje de la aplicación. Por defecto está en inglés
 	 */
-	//define('LANG','EN');
+	define('LANG','ES');
 	
 	/**
 	 * Nombre de la aplicacion
