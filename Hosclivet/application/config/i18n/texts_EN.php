@@ -2,6 +2,7 @@
 $texts = array(
 		'index' => 'Index',
 		'help' => 'Help',
+		'test' => 'Test',
 		'overview' => 'Overview',
 		'dashboard' => 'Dashboard',
 		'my.notes' => 'My notes',

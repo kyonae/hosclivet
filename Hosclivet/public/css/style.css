@@ -59,8 +59,8 @@ p {
 
 }
 
-.header li.active a,
-.header li.active:hover a {
+.header>li.active a,
+.header>li.active:hover a {
     color: #fff;
     background-color: #4356a3;
 }
@@ -76,7 +76,6 @@ p {
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
     */
-    padding: 45px 35px;
     /*margin:0 10px;*/
     margin: 0;
     min-height: 250px;
@@ -379,7 +378,6 @@ table.overview-table td.avatar {
     background-color: red;
     font-weight: bold;
 }
-
 
 /* basic responsive stuff */
 @media only screen and (max-width:800px) {

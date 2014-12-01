@@ -2,6 +2,7 @@
 $texts = array(
 		'index' => 'Inicio',
 		'help' => 'Ayuda',
+		'test' => 'Prueba',
 		'overview' => 'Visión general',
 		'dashboard' => 'Tablón',
 		'my.notes' => 'Mis notas',
