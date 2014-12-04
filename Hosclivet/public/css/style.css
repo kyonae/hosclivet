@@ -401,6 +401,13 @@ table.overview-table td.avatar {
     font-weight: bold;
 }
 
+#menu_button{
+	cursor: pointer;
+	position:fixed;
+	top: 0.57em;
+	right: 1em;
+}
+
 /* basic responsive stuff */
 @media only screen and (max-width:800px) {
 	#menu_navigation{
