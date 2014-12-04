@@ -22,6 +22,28 @@ p {
 }
 
 /* TODO: this should be part of the real header */
+#header,#footer{
+	position: fixed;
+	width: 100%;
+	z-index: 9;
+}
+
+#header{
+	top: 0px;
+}
+
+#footer{
+	background-color: #1e2029;
+	text-align:center;
+	padding: 1em;
+	color: #fff;
+	bottom: 0px;
+}
+
+.debug-helper-box{
+	z-index: 8;
+}
+
 .title-box {
     font-size: 25px;
     padding: 15px;
@@ -381,7 +403,11 @@ table.overview-table td.avatar {
 
 /* basic responsive stuff */
 @media only screen and (max-width:800px) {
-
+	#menu_navigation{
+		height: 20em;
+		overflow-y: scroll;
+	}
+	
     .header_left_box,
     .header .avatar {
         float: none;

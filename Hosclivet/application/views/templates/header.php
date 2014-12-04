@@ -26,8 +26,12 @@
 		<div class='title-box'>
 			<a href="<?php echo URL; ?>"><?php echo APP_NAME; ?></a>
 		</div>
+		<span class="fa-stack fa-lg" id='menu_button' style='cursor: pointer;position:fixed; top: 0.57em; right: 1em;'>
+			<i class="fa fa-square-o fa-stack-2x fa-inverse"></i>
+			<i class="fa fa-bars fa-stack-1x fa-inverse" style='top: -1px;'></i>
+		</span>
 	
-		<div class="header">
+		<div class="header" id='menu_navigation'>
 			<div class="header_left_box">
 			<ul id="menu">
 				<li <?php if ($this->checkForActiveController($filename, "index")) { echo ' class="active" '; } ?> >

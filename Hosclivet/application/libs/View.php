@@ -18,12 +18,17 @@ class View
 	{
 		require TEXTS;
 		// Página sin cabecera ni pie por cualquier motivo elegido por el desarrollador
-		if ($render_without_header_and_footer == true) {
-			require VIEWS_PATH . $filename . '.php';
-		} else {
-			require TEMPLATES_PATH . 'header.php';
-			require VIEWS_PATH . $filename . '.php';
-			require TEMPLATES_PATH . 'footer.php';
+		if (file_exists(VIEWS_PATH . $filename . '.php')){
+			if ($render_without_header_and_footer == true) {
+				require VIEWS_PATH . $filename . '.php';
+			} else {
+				require TEMPLATES_PATH . 'header.php';
+				require VIEWS_PATH . $filename . '.php';
+				require TEMPLATES_PATH . 'footer.php';
+			}
+		}
+		else{
+			header('location: ' . URL . 'error');
 		}
 	}
 
