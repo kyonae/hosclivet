@@ -411,8 +411,8 @@ table.overview-table td.avatar {
 /* basic responsive stuff */
 @media only screen and (max-width:800px) {
 	#menu_navigation{
-		height: 20em;
-		overflow-y: scroll;
+		max-height: 20em;
+		overflow-y: auto;
 	}
 	
     .header_left_box,
