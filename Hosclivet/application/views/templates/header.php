@@ -54,7 +54,7 @@
 						<a href="<?php echo URL; ?>note"><i class='fa fa-file-text-o fa-fw'></i>&nbsp;<?php echo $texts['my.notes']; ?></a>
 					</li>
 					<li <?php if ($this->checkForActiveController($filename, "login")) { echo ' class="active" '; } ?> >
-						<a href="<?php echo URL; ?>login/showprofile"><i class='fa fa-user fa-fw'></i>&nbsp;<?php echo $texts['my.account']; ?></a>
+						<a href="<?php echo URL; ?>login/showprofile"><i class='fa fa-user fa-fw'></i>&nbsp;<?php echo $texts['my.account'] . ' (' . Session::get('user_name') . ')'; ?></a>
 						<ul class="sub-menu">
 							<li <?php if ($this->checkForActiveController($filename, "login")) { echo ' class="active" '; } ?> >
 								<a href="<?php echo URL; ?>login/changeaccounttype"><?php echo $texts['change.account']; ?></a>
@@ -79,14 +79,6 @@
 				<?php endif; ?>
 			</ul>
 			</div>
-	
-			<?php if (Session::get('user_logged_in') == true): ?>
-				<div class="header_right_box">
-					<div class="namebox">
-						<?php echo $texts['welcome'] . " " . Session::get('user_name'); ?> !
-					</div>
-				</div>
-			<?php endif; ?>
 	
 			<div class="clear-both"></div>
 		</div>
