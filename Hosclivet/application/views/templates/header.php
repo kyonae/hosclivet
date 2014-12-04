@@ -46,7 +46,7 @@
 				<li <?php if ($this->checkForActiveController($filename, "test")) { echo ' class="active" '; } ?> >
 					<a href="<?php echo URL; ?>test"><i class='fa fa-laptop fa-fw'></i>&nbsp;<?php echo $texts['test']; ?></a>
 				</li>
-				<?php if (Session::get('user_logged_in') == false):?>
+				<?php if (Session::get('user_logged_in') == true):?>
 					<li <?php if ($this->checkForActiveController($filename, "dashboard")) { echo ' class="active" '; } ?> >
 						<a href="<?php echo URL; ?>dashboard"><i class='fa fa-list-all fa-fw'></i>&nbsp;<?php echo $texts['dashboard']; ?></a>
 					</li>
