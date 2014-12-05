@@ -1,6 +1,15 @@
 <?php
 $texts = array(
 		'index' => 'Inicio',
+		'services' => 'Servicios',
+		'personnel' => 'Personal',
+		'notice.board' => 'Tablón de anuncios',
+		'ads' => 'Anuncios',
+		'events' => 'Eventos',
+		'articles' => 'Artículos',
+		'campaigns' => 'Campañas',
+		'vaccines' => 'Vacunas',
+		'who.we.are' => 'Quiénes somos',
 		'help' => 'Ayuda',
 		'test' => 'Prueba',
 		'overview' => 'Visión general',

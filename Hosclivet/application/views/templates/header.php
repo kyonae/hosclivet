@@ -37,28 +37,44 @@
 				<li <?php if ($this->checkForActiveController($filename, "index")) { echo ' class="active" '; } ?> >
 					<a href="<?php echo URL; ?>"><i class='fa fa-home fa-fw'></i>&nbsp;<?php echo $texts['index']; ?></a>
 				</li>
-				<li <?php if ($this->checkForActiveController($filename, "help")) { echo ' class="active" '; } ?> >
-					<a href="<?php echo URL; ?>help"><i class='fa fa-info-circle fa-fw'></i>&nbsp;<?php echo $texts['help']; ?></a>
+				<li <?php if ($this->checkForActiveController($filename, "services")) { echo ' class="active" '; } ?> >
+					<a href="<?php echo URL; ?>services"><i class='fa fa-stethoscope fa-fw'></i>&nbsp;<?php echo $texts['services']; ?></a>
 				</li>
-				<li <?php if ($this->checkForActiveController($filename, "overview")) { echo ' class="active" '; } ?> >
-					<a href="<?php echo URL; ?>overview"><i class='fa fa-eye fa-fw'></i>&nbsp;<?php echo $texts['overview']; ?></a>
+				<li <?php if ($this->checkForActiveController($filename, "personnel")) { echo ' class="active" '; } ?> >
+					<a href="<?php echo URL; ?>personnel"><i class='fa fa-user-md fa-fw'></i>&nbsp;<?php echo $texts['personnel']; ?></a>
 				</li>
-				<li <?php if ($this->checkForActiveController($filename, "test")) { echo ' class="active" '; } ?> >
-					<a href="<?php echo URL; ?>test"><i class='fa fa-laptop fa-fw'></i>&nbsp;<?php echo $texts['test']; ?></a>
+				<li <?php if ($this->checkForActiveController($filename, "noticeBoard")) { echo ' class="active" '; } ?> >
+					<a href="<?php echo URL; ?>noticeBoard"><i class='fa fa-list-alt fa-fw'></i>&nbsp;<?php echo $texts['notice.board']; ?></a>
+					<ul class='sub-menu'>
+						<li <?php if ($this->checkForActiveController($filename, "events")) { echo ' class="active" '; } ?> >
+							<a href="<?php echo URL; ?>noticeBoard/ads"><?php echo $texts['ads']; ?></a>
+						</li>
+						<li <?php if ($this->checkForActiveController($filename, "events")) { echo ' class="active" '; } ?> >
+							<a href="<?php echo URL; ?>noticeBoard/events"><?php echo $texts['events']; ?></a>
+						</li>
+						<li <?php if ($this->checkForActiveController($filename, "events")) { echo ' class="active" '; } ?> >
+							<a href="<?php echo URL; ?>noticeBoard/articles"><?php echo $texts['articles']; ?></a>
+						</li>
+						<li <?php if ($this->checkForActiveController($filename, "events")) { echo ' class="active" '; } ?> >
+							<a href="<?php echo URL; ?>noticeBoard/campaigns"><?php echo $texts['campaigns']; ?></a>
+						</li>
+						<li <?php if ($this->checkForActiveController($filename, "events")) { echo ' class="active" '; } ?> >
+							<a href="<?php echo URL; ?>noticeBoard/vaccines"><?php echo $texts['vaccines']; ?></a>
+						</li>
+					</ul>
+				</li>
+				<li <?php if ($this->checkForActiveController($filename, "who")) { echo ' class="active" '; } ?> >
+					<a href="<?php echo URL; ?>who"><i class='fa fa-group fa-fw'></i>&nbsp;<?php echo $texts['who.we.are']; ?></a>
 				</li>
 				<?php if (Session::get('user_logged_in') == true):?>
-					<li <?php if ($this->checkForActiveController($filename, "dashboard")) { echo ' class="active" '; } ?> >
-						<a href="<?php echo URL; ?>dashboard"><i class='fa fa-list-all fa-fw'></i>&nbsp;<?php echo $texts['dashboard']; ?></a>
-					</li>
-					<li <?php if ($this->checkForActiveController($filename, "note")) { echo ' class="active" '; } ?> >
-						<a href="<?php echo URL; ?>note"><i class='fa fa-file-text-o fa-fw'></i>&nbsp;<?php echo $texts['my.notes']; ?></a>
-					</li>
 					<li <?php if ($this->checkForActiveController($filename, "login")) { echo ' class="active" '; } ?> >
-						<a href="<?php echo URL; ?>login/showprofile"><i class='fa fa-user fa-fw'></i>&nbsp;<?php echo $texts['my.account'] . ' (' . Session::get('user_name') . ')'; ?></a>
+						<a href="<?php echo URL; ?>login/showprofile"><i class='fa fa-user fa-fw'></i>&nbsp;<?php echo $texts['my.account']; if (Session::get('user_name')): echo ' (' . Session::get('user_name') . ')'; endif;?></a>
 						<ul class="sub-menu">
+							<?php if (Session::get('admin') == true): ?>
 							<li <?php if ($this->checkForActiveController($filename, "login")) { echo ' class="active" '; } ?> >
 								<a href="<?php echo URL; ?>login/changeaccounttype"><?php echo $texts['change.account']; ?></a>
 							</li>
+							<?php endif; ?>
 							<li <?php if ($this->checkForActiveController($filename, "login")) { echo ' class="active" '; } ?> >
 								<a href="<?php echo URL; ?>login/editusername"><?php echo $texts['edit.username']; ?></a>
 							</li>
@@ -81,5 +97,7 @@
 			</div>
 	
 			<div class="clear-both"></div>
+			
 		</div>
+		
 	</div>
